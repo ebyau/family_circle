@@ -1,6 +1,6 @@
 # Created by https://www.toptal.com/developers/gitignore/api/linux,django,visualstudiocode,python
 # Edit at https://www.toptal.com/developers/gitignore?templates=linux,django,visualstudiocode,python
-
+# specifies files that will be ignore we doing commit
 ### Django ###
 *.log
 *.pot
