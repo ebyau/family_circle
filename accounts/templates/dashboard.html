@@ -18,7 +18,7 @@
       <th>Name</th>
       <!-- <th>File</th> -->
       <th>Uploaded at</th>
-      <!-- <th>Size</th> -->
+      <th>Message</th>
     </tr>
   </thead>
   <tbody>
@@ -28,6 +28,7 @@
         <!-- <td><a href="{{ audio.file.url }}" target="_blank">{{ audio.file.name }}</a></td> -->
         <td>{{ audio.date_created }}</td>
         <!-- <td>{{ audio.file.size|filesizeformat }}</td> -->
+        <td>{{ audio.message }}</td>
       </tr>
     {% empty %}
       <tr>

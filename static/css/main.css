@@ -16,7 +16,9 @@ form {
   margin-bottom: 20px;
   padding: 10px;
   border: 1px solid #ff9900;
-  width: 350px;
+  width: 750px;
+  /* display: flex;
+  justify-content: center; */
 }
 table {
   border-collapse: collapse;
