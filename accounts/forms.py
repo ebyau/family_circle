@@ -5,8 +5,20 @@ from django import forms
 
 from .models import *
 
-class CreateUserForm(UserCreationForm):
-	class Meta:
-		model = User
-		fields = ['username', 'email', 'password1', 'password2']
+from django.forms import ModelForm
+from django import forms
 
+
+class UploadForm(ModelForm):
+    message = forms.Textarea()
+    file = forms.FileField()
+
+    class Meta:
+        model = Audio
+        fields = ['name','message', 'file']
+
+
+class CreateUserForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'email', 'password1', 'password2']

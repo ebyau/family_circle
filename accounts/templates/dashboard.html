@@ -1,29 +1,39 @@
 {% extends 'main.html' %}
+{% load cloudinary %}
+{% load static %}
 
 {% block content %}
 
-<div>
 
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Trancription</th>
-            <th>Date created</th>
-            
-        </tr>
+<h1>WELCOME TO FAMILY CIRCLE AUDIO CENTER</h1>
 
-        {% for i in customers%}
-        <tr>
-            <td>{{i.name}}</td>
-            <td>{{i.message}}</td>
-            <td>{{i.date_created}}</td>
-        </tr>    
-        
+<p>
 
-        {%endfor%}
-    </table>
-</div>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero quia eveniet laborum voluptate nesciunt culpa fugiat eos unde, odit voluptates illo recusandae autem non dicta labore aliquam. Itaque, quam dolorum!
+</p>
 
-Hello World
-
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>File</th>
+      <th>Uploaded at</th>
+      <th>Size</th>
+    </tr>
+  </thead>
+  <tbody>
+{% for audio in audios %}
+      <tr>
+          <td>{{ audio.name }}</td>
+        <td><a href="{{ audio.file.url }}" target="_blank">{{ audio.file.name }}</a></td>
+        <td>{{ audio.date_created }}</td>
+        <td>{{ audio.file.size|filesizeformat }}</td>
+      </tr>
+    {% empty %}
+      <tr>
+        <td colspan="3">No data.</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
