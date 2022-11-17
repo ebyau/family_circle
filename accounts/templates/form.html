@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+<h1>UPLOAD AUDIO FILES</h1>
+<form method="post" action="{% url 'upload' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form }}
+    <button>SUBMIT</button>
+
+
+
+{% endblock %}
+
+
+
